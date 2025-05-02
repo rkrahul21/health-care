@@ -1,11 +1,8 @@
 import React from 'react'
-import Main from './Main/page'
 
 function page() {
   return (
-    <div>
-       <Main />
-    </div>
+    <div>All Doctors listing</div>
   )
 }
 
