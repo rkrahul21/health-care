@@ -1,8 +1,11 @@
+import Card from '@/components/Card'
 import React from 'react'
 
 function page() {
   return (
-    <div>All Doctors listing</div>
+    <div>
+      <Card/>
+    </div>
   )
 }
 

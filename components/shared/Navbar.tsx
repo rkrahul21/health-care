@@ -23,13 +23,13 @@ function Navbar() {
             <Link href="/" className="text-gray-600 hover:text-medical-blue transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-gray-600 hover:text-medical-blue transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-medical-blue transition-colors">
               Services
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-medical-blue transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-medical-blue transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-medical-blue transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-medical-blue transition-colors">
               Contact
             </Link>
           </nav>
@@ -76,21 +76,21 @@ function Navbar() {
               Home
             </Link>
             <Link
-              href="/services"
+              href="/"
               className="block text-gray-600 hover:text-medical-blue transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
-              href="/about"
+              href="/"
               className="block text-gray-600 hover:text-medical-blue transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
-              href="/contact"
+              href="/"
               className="block text-gray-600 hover:text-medical-blue transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

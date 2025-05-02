@@ -2,18 +2,17 @@
 import React, { useEffect, useState } from "react";
 import { Idoctor } from "@/models/doctor";
 import Image from "next/image";
-import Form from "@/components/Form";
 
 function Card() {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [formOpen, setFormOpen] = useState(false);
+  
   const [searchQuery, setSearchQuery] = useState("");
 
   const fetchDoctors = async (query = "") => {
     setLoading(true);
     try {
-      console.log("card",searchQuery);
+      console.log("card", searchQuery);
       const response = await fetch(`/api/getDoctors?search=${query}`);
       const data = await response.json();
       setDoctors(data);
@@ -35,10 +34,10 @@ function Card() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      
-      {formOpen && <Form setFormOpen={setFormOpen} />}
 
-    
+      
+
+
 
       {/* Doctors List */}
       <div className="flex flex-col items-center justify-center mb-8">
@@ -47,14 +46,14 @@ function Card() {
           <p className="text-gray-500">No doctors found</p>
         )}
       </div>
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="mb-8 flex ">
+      {/* Search Bar */}
+      <form onSubmit={handleSearch} className=" w-full mb-8 flex items-center justify-center gap-2">
         <input
           type="text"
           placeholder="Search by name, state, or specialization"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 w-full md:w-1/2"
+          className="border-2 border-gray-500 rounded-md p-2 w-full md:w-[80%]"
         />
         <button
           type="submit"
@@ -65,20 +64,12 @@ function Card() {
       </form>
       {!loading && doctors.length > 0 && (
         <div className="w-full m-2">
-          <h1 className="text-[50px] font-bold text-center mb-8 underline text-blue-900">
+          <h1 className=" text-2xl md:text-[50px] font-bold text-center mb-8 underline text-blue-900">
             Our Doctors
           </h1>
-          {/* Add Doctors Button */}
-      <div className="mb-4">
-        <button
-          className="text-white p-2 rounded-md bg-blue-900"
-          onClick={() => setFormOpen(!formOpen)}
-        >
-          Add Doctors
-        </button>
-      </div>
+        
 
-      
+
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-2">
             {doctors.map((doctor: Idoctor) => (
               <div
@@ -215,10 +206,10 @@ export default Card;
 //                 <div className="flex justify-center mt-4">
 
 //                   <Image
-//                     src="/image.png" 
+//                     src="/image.png"
 //                     alt="Doctor Avatar"
-//                     width={96} 
-//                     height={96} 
+//                     width={96}
+//                     height={96}
 //                     className="w-24 h-24 rounded-full border-2 border-blue-500"
 //                   />
 //                 </div>
